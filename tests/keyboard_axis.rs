@@ -16,10 +16,7 @@ fn test_app() -> App {
         .add_plugins(InputPlugin)
         .add_plugins(InputManagerPlugin::<TestAction>::default())
         .init_resource::<ActionState<TestAction>>()
-        .insert_resource(
-            InputMap::default()
-                .with_dual_axis(TestAction::Move, VirtualDPad::wasd()),
-        );
+        .insert_resource(InputMap::default().with_dual_axis(TestAction::Move, VirtualDPad::wasd()));
     app.update();
     app
 }
